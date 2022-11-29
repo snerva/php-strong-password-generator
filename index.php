@@ -12,6 +12,11 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 
 $passwordLength = $_GET['passwordlength'];
 //var_dump($passwordLength);
+$chUppercase = $_POST['uppercase'];
+$chLowercase = $_POST['lowercase'];
+$chNumber = $_POST['numbers'];
+$chSymbols = $_POST['symbols'];
+$repeat = $_POST['repeat'];
 
 include __DIR__ . "/functions.php";
 ?>
@@ -38,11 +43,6 @@ include __DIR__ . "/functions.php";
             </section>
 
             <section class="generator bg-white p-3 rounded-2">
-                <p class="text-center fw-bold fs-4 text-secondary m-0"><?php if ($passwordLength != 0) {
-                                                                            echo 'La tua password é: ';
-                                                                        } else {
-                                                                            echo 'Inserisci parametri:';
-                                                                        } ?> </p>
                 <h2 class="text-center p-3"><?php echo $password ?> </h2>
                 <form action="index.php" method="get">
                     <div class="mb-3 d-flex">
@@ -50,7 +50,8 @@ include __DIR__ . "/functions.php";
                         <input type="number" class="form-control w-25 mx-5" name="passwordlength" id="passwordlength">
                     </div>
                     <!--/.input text-->
-
+                </form>
+                <form action="index.php" method="post">
                     <div class="mb-3 d-flex">
                         <label for="repeat">Consenti ripetizioni di uno o piú caratteri:</label>
                         <div class="settings mx-5">
