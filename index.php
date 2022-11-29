@@ -51,6 +51,50 @@ include __DIR__ . "/functions.php";
                     </div>
                     <!--/.input text-->
 
+                    <div class="mb-3 d-flex">
+                        <label for="repeat">Consenti ripetizioni di uno o piú caratteri:</label>
+                        <div class="settings mx-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="repeat" id="repeat">
+                                <label class="form-check-label" for="repeat">
+                                    Sí
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="" id="" checked>
+                                <label class="form-check-label" for="">
+                                    No
+                                </label>
+                            </div>
+
+
+                            <div class="form-check mt-3">
+                                <input class="form-check-input" type="checkbox" value="" id="lowercase">
+                                <label class="form-check-label" for="lowercase">
+                                    Lettere Minuscole
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="uppercase">
+                                <label class="form-check-label" for="uppercase">
+                                    Lettere Maiuscole
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="numbers">
+                                <label class="form-check-label" for="numbers">
+                                    Numeri
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="symbols">
+                                <label class="form-check-label" for="symbols">
+                                    Simboli
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.settings-->
                     <button class="btn btn-primary" type="submit">Invia</button>
                     <button class="btn btn-secondary" type="reset">Annulla</button>
                 </form>
