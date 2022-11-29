@@ -11,8 +11,23 @@ Invece di visualizzare la password nella index, effettuare un redirect ad una pa
 
 
 $passwordLength = $_GET['passwordlength'];
-var_dump($passwordLength);
+//var_dump($passwordLength);
 
+$background;
+$text;
+
+if ($passwordLength != 0 && !$passwordLength) {
+    $background = 'bg-info';
+    $text = 'Nessun parametro valido inserito! Inserire parametri.';
+}
+
+$password = generatePassword($passwordLength);
+
+function generatePassword($length)
+{
+    $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
+    return substr(str_shuffle($characters), 0, $length);
+}
 ?>
 
 <!DOCTYPE html>
@@ -36,13 +51,19 @@ var_dump($passwordLength);
                 <h1 class="text-white">Genera una password sicura</h1>
             </section>
 
-            <section class="banner"></section>
+            <section class="info <?php echo $background ?> bg-opacity-50 p-4 mb-3 text-white rounded-2">
+                <p class="m-0"><?php echo $text ?></p>
+            </section>
+
+            <section class="password_generated p-4 text-center bg-light">
+                <h2>La password che hai generato é: <?php echo $password ?> </h2>
+            </section>
 
             <section class="generator bg-white p-3 rounded-2">
                 <form action="index.php" method="get">
-                    <div class="d-flex juistify-content-between mb-3 ">
+                    <div class="mb-3 d-flex">
                         <label for="passwordlength">Lunghezza password:</label>
-                        <input type="number" class="form-control w-25" name="passwordlength" id="passwordlength">
+                        <input type="number" class="form-control w-25 mx-5" name="passwordlength" id="passwordlength">
                     </div>
                     <!--/.input text-->
 
